@@ -1,0 +1,45 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "captionize ==========",
+  "type": "module",
+  "main": "./dist/cjs/captionize.js",
+  "module": "./dist/esm/captionize.js",
+  "types": "./dist/types/captionize.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/captionize.js",
+      "require": "./dist/cjs/captionize.js",
+      "types": "./dist/types/captionize.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build": "npm run build:cjs && npm run build:esm",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vardars/captionize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vardars/captionize/issues"
+  },
+  "homepage": "https://github.com/vardars/captionize#readme",
+  "devDependencies": {
+    "@types/jquery": "^3.5.32",
+    "jquery": "^3.7.1",
+    "typescript": "^5.8.3"
+  }
+}
